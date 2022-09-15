@@ -1,3 +1,4 @@
+from genericpath import exists
 import os
 import sys
 
@@ -6,14 +7,19 @@ import glob
 
 
 
-class EngineeringTest():        
+class EngineeringTest():
+
+    def _check_path(self, path):
+        if not os.path.exists(DIR_PATH):
+            return False
+        else:
+            return True
 
     def _get_all_csv_files(self, DIR_PATH):
         '''
         Get the list of file in directory and return the list of csv files
 
         '''
-        
         os.chdir(DIR_PATH)
         extension = 'csv'
         all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
@@ -51,9 +57,14 @@ if __name__ == "__main__":
     DIR_PATH  = input("Enter the Folder Location \n")
     Obj = EngineeringTest()
     try :
-        files_csv = Obj._get_all_csv_files(DIR_PATH)
-        dataframes = Obj.file_data_traverses(files_csv)
-        Obj.generate_combined_csv(dataframes)
-        print("Script Running Succesfully")
+        exist_path = Obj._check_path()
+        if exist_path:
+            files_csv = Obj._get_all_csv_files(DIR_PATH)
+            dataframes = Obj.file_data_traverses(files_csv)
+            Obj.generate_combined_csv(dataframes)
+            print("Script Running Succesfully")
+        else:
+            print("Path doesn't exists")
+            
     except Exception as e:
         print("Something went wrong \n {}" .format(str(e)))

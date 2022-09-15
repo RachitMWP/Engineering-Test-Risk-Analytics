@@ -1,0 +1,5 @@
+.virtualenv
+.envrc
+*.pytest_cache
+.idea
+.vscode

@@ -7,7 +7,7 @@ Engineering Test Risk Analytics
             
 - install all the dependencies from requirement.txt using `pip install -r requirement.txt` in your virtual environment
 - Once installed, drop the csv file in `Engineering Test Files` folder.
-- Run the Script using `python -m src.main.py file_name` ex- `python -m src.main.py` then enter the folder name
+- Run the Script using `python -m src.main.py` ex- `python -m src.main.py` then enter the folder name
 - **Output** : new csv file will get saved in `Engineering Test Files/Output` folder with the name **combined.csv**
 
 

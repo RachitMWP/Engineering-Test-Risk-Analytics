@@ -10,7 +10,7 @@ import glob
 class EngineeringTest():
 
     def _check_path(self, path):
-        if not os.path.exists(DIR_PATH):
+        if not os.path.exists(path):
             return False
         else:
             return True
@@ -55,7 +55,7 @@ class EngineeringTest():
 
 if __name__ == "__main__":
     DIR_PATH  = input("Enter the Folder Location \n")
-    Obj = EngineeringTest()
+    Obj = EngineeringTest(DIR_PATH)
     try :
         exist_path = Obj._check_path()
         if exist_path:

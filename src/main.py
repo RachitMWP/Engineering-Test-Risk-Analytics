@@ -55,9 +55,9 @@ class EngineeringTest():
 
 if __name__ == "__main__":
     DIR_PATH  = input("Enter the Folder Location \n")
-    Obj = EngineeringTest(DIR_PATH)
+    Obj = EngineeringTest()
     try :
-        exist_path = Obj._check_path()
+        exist_path = Obj._check_path(DIR_PATH)
         if exist_path:
             files_csv = Obj._get_all_csv_files(DIR_PATH)
             dataframes = Obj.file_data_traverses(files_csv)
